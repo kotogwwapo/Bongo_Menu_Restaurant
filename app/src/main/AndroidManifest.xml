@@ -14,9 +14,9 @@
                 android:label="@string/title_activity_restaurant_home_page"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".SignUpActivity">
+        <activity android:name=".SignUpActivity.SignUpActivity">
         </activity>
-        <activity android:name=".SignIn2Activity">
+        <activity android:name=".SignUpActivity.SignIn2Activity">
         </activity>
         <activity android:name=".SignInActivity">
         </activity>

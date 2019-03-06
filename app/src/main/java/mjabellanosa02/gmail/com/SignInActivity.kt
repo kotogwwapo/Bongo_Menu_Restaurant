@@ -5,8 +5,9 @@ import android.graphics.Color
 import android.graphics.PorterDuff
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_sign_in.*
+import mjabellanosa02.gmail.com.SignUpActivity.SignIn2Activity
+import mjabellanosa02.gmail.com.SignUpActivity.SignUpActivity
 
 class SignInActivity : AppCompatActivity() {
 

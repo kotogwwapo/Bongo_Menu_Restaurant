@@ -1,9 +1,11 @@
-package mjabellanosa02.gmail.com
+package mjabellanosa02.gmail.com.SignUpActivity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_sign_in2.*
+import mjabellanosa02.gmail.com.R
+import mjabellanosa02.gmail.com.RestaurantHomePage
 
 class SignIn2Activity : AppCompatActivity() {
 
