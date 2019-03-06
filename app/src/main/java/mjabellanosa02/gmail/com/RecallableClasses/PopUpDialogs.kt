@@ -6,7 +6,7 @@ import mjabellanosa02.gmail.com.R
 
 class PopUpDialogs(val context: Context) {
 
-    fun errorDialog(message: String, title: String) {
+    fun errorDialog(title: String, message: String) {
         var alertDialog = AlertDialog.Builder(context)
         alertDialog.setIcon(R.drawable.ic_error_green_24dp)
         alertDialog.setMessage(message)
@@ -18,7 +18,7 @@ class PopUpDialogs(val context: Context) {
         alertDialog.show()
     }
 
-    fun successDialog(message: String, title: String) {
+    fun successDialog(title: String, message: String) {
         var alertDialog = AlertDialog.Builder(context)
         alertDialog.setIcon(R.drawable.ic_check_circle_green_24dp)
         alertDialog.setMessage(message)
@@ -31,7 +31,7 @@ class PopUpDialogs(val context: Context) {
         alertDialog.show()
     }
 
-    fun infoDialog(message: String, title: String) {
+    fun infoDialog(title: String, message: String) {
         var alertDialog = AlertDialog.Builder(context)
         alertDialog.setIcon(R.drawable.ic_info_green_24dp)
         alertDialog.setMessage(message)
