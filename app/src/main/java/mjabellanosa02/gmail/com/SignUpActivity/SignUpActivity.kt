@@ -8,7 +8,6 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import mjabellanosa02.gmail.com.Model.FirestoreUser
@@ -38,8 +37,8 @@ class SignUpActivity : AppCompatActivity() {
             if (displyName.isNotBlank() && userName.isNotBlank() && email.isNotBlank() && password.isNotBlank()){
                 if(email.contains("@")){
                     if(PasswordChecker(this).isValidPassword(password, password)){
-                        val custom_Progress_Dialog = Custom_Progress_Dialog(this);
-                        custom_Progress_Dialog.showDialog("Loading", RandomMessages().getRandomMessage())
+                        val dialog = Custom_Progress_Dialog(this)
+                        dialog.showDialog("Loading", RandomMessages().getRandomMessage())
                         val auth = FirebaseAuth.getInstance()
 
                         auth.createUserWithEmailAndPassword(email, password)
@@ -60,15 +59,15 @@ class SignUpActivity : AppCompatActivity() {
                                             task1: Task<Void> ->
                                             if (task1.isSuccessful){
                                                 startActivity(Intent(this, RestaurantHomePage::class.java))
-                                                custom_Progress_Dialog.dissmissDialog()
-                                                finish()
+                                                dialog.dissmissDialog()
+                                                finishAndRemoveTask()
                                             }else{
-                                                custom_Progress_Dialog.dissmissDialog()
+                                                dialog.dissmissDialog()
                                                 popUpDialogs.errorDialog("Error", "Database Error")
                                             }
                                         }
                                 }else{
-                                    custom_Progress_Dialog.dissmissDialog()
+                                    dialog.dissmissDialog()
                                     popUpDialogs.errorDialog("Error", "Email is already in use")
                                     Log.e("SUA", task.exception.toString())
                                 }

@@ -5,39 +5,39 @@
 
     <group android:checkableBehavior="single">
         <item
-                android:id="@+id/nav_camera"
+                android:id="@+id/nav_home"
                 android:icon="@drawable/ic_menu_camera"
                 android:title="Home"/>
         <item
-                android:id="@+id/nav_gallery"
+                android:id="@+id/nav_categories"
                 android:icon="@drawable/ic_menu_gallery"
                 android:title="Menu categories"/>
         <item
-                android:id="@+id/nav_slideshow"
+                android:id="@+id/nav_orders"
                 android:icon="@drawable/ic_menu_camera"
                 android:title="Your Order"/>
         <item
-                android:id="@+id/nav_manage"
+                android:id="@+id/nav_favorite"
                 android:icon="@drawable/ic_menu_gallery"
                 android:title="Your Favorite"/>
         <item
                 android:id="@+id/nav_hotdeals"
                 android:icon="@drawable/ic_menu_slideshow"
                 android:title="Hot deals"/>
+
+
         <item
-                android:id="@+id/nav_Notification"
+                android:id="@+id/nav_notification"
                 android:icon="@drawable/ic_menu_slideshow"
-                android:title="Your Favorite"/>
-
-
-            <item
-                    android:id="@+id/nav_share"
-                    android:icon="@drawable/ic_menu_camera"
-                    android:title="Profile"/>
-            <item
-                    android:id="@+id/nav_send"
-                    android:icon="@drawable/ic_menu_gallery"
-                    android:title="Logout"/>
+                android:title="Profile"/>
+        <item
+                android:id="@+id/nav_profile"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Profile"/>
+        <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="Logout"/>
 
     </group>
 

@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class RestaurantHomePage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -77,30 +78,54 @@ public class RestaurantHomePage extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            Fragment newFragment = new RestaurantHomePageFragment();
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction fragmentTransaction = RestaurantHomePage.this.getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.Framelayout_apptabs, newFragment);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-            Fragment newFragment = new MenucategoriesFragment();
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction fragmentTransaction = RestaurantHomePage.this.getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.Framelayout_apptabs, newFragment);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
+        switch (id){
+            case R.id.nav_home:{
+                Fragment newFragment = new RestaurantHomePageFragment();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = RestaurantHomePage.this.getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.Framelayout_apptabs, newFragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                // Handle the camera action
+                break;
+            }
 
-        } else if (id == R.id.nav_slideshow) {
+            case R.id.nav_categories:{
+                Fragment newFragment = new MenucategoriesFragment();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = RestaurantHomePage.this.getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.Framelayout_apptabs, newFragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+            }
 
-        } else if (id == R.id.nav_manage) {
+            case R.id.nav_orders:{
+                break;
+            }
 
-        } else if (id == R.id.nav_share) {
+            case R.id.nav_favorite:{
+                break;
+            }
 
-        } else if (id == R.id.nav_send) {
+            case R.id.nav_hotdeals:{
+                break;
+            }
 
+            case R.id.nav_notification:{
+                break;
+            }
+
+            case R.id.nav_profile:{
+                break;
+            }
+
+            case R.id.nav_logout:{
+                FirebaseAuth.getInstance().signOut();
+                finishAndRemoveTask();
+                startActivity(new Intent(RestaurantHomePage.this, MainActivity.class));
+                break;
+            }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
