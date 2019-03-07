@@ -58,7 +58,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView10" android:layout_marginTop="4dp"/>
     <ScrollView
             android:layout_width="0dp"
-            android:layout_height="184dp"
+            android:layout_height="143dp"
             android:background="@drawable/edit_textbox_style1"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="8dp"
@@ -78,10 +78,20 @@
             android:text="Customize your order"
             android:layout_width="274dp"
             android:layout_height="60dp"
-            android:id="@+id/button_menuItemDetailsCustomizeOrder" android:layout_marginTop="44dp"
+            android:id="@+id/button_menuItemDetailsCustomizeOrder" android:layout_marginTop="12dp"
             app:layout_constraintTop_toBottomOf="@+id/scrollView2" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:textColor="@android:color/white"
-            android:background="@color/colorPrimaryDark" app:layout_constraintHorizontal_bias="0.496"/>
+            android:background="@color/colorPrimaryDark" app:layout_constraintHorizontal_bias="0.532"/>
+    <Button
+            android:text="Add To Cart"
+            android:layout_width="274dp"
+            android:layout_height="60dp"
+            android:id="@+id/button_menuItemDetailsAddToCart"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/button_menuItemDetailsCustomizeOrder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:textColor="@android:color/white"
+            android:background="@color/colorPrimaryDark" app:layout_constraintHorizontal_bias="0.532"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
