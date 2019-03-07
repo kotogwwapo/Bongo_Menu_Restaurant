@@ -23,6 +23,6 @@ class MenuItemViewHolder( var itemUid:String , var itemUrl: String, var itemName
             Picasso.get().load(itemUrl).into(itemFoodImage)
         }
         itemFoodName.text = itemName
-        itemFoodPrice.text = itemPrice.toString()
+        itemFoodPrice.text = "$"+itemPrice+"0"
     }
 }

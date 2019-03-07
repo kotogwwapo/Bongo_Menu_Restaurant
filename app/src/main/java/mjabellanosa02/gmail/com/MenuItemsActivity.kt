@@ -65,6 +65,7 @@ class MenuItemsActivity : AppCompatActivity() {
         adapter.setOnItemClickListener { item, view ->
             val menuItem = item as MenuItemViewHolder
             var intent = Intent(menuItem.context, MenuItemDetailsActivity::class.java)
+            intent.putExtra("categoryUid", categoryUid)
             intent.putExtra("itemUid", menuItem.itemUid)
             startActivity(intent)
         }

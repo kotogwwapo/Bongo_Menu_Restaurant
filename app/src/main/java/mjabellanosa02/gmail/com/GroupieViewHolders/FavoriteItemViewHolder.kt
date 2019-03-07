@@ -13,7 +13,7 @@ import mjabellanosa02.gmail.com.R
 import mjabellanosa02.gmail.com.RecallableClasses.Custom_Progress_Dialog
 import mjabellanosa02.gmail.com.RecallableClasses.PopUpDialogs
 
-class FavoriteItemViewHolder(var itemUid:String, var itemUrl: String, var itemName: String, var itemPrice: Double, val context: Context): Item<ViewHolder>() {
+class FavoriteItemViewHolder(var itemUid:String, var itemUrl: String, var itemName: String, var itemPrice: Double, var itemCategory:String, val context: Context): Item<ViewHolder>() {
     override fun getLayout(): Int {
       return R.layout.row_favorite_item
     }
@@ -32,7 +32,7 @@ class FavoriteItemViewHolder(var itemUid:String, var itemUrl: String, var itemNa
             Picasso.get().load(itemUrl).into(itemFoodImage)
         }
         itemFoodName.text = itemName
-        itemFoodPrice.text = itemPrice.toString()
+        itemFoodPrice.text = "$"+itemPrice.toString()+"0"
 
         itemDeleteButton.setOnClickListener {
             var alertDialog = AlertDialog.Builder(context)

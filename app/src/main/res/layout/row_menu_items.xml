@@ -28,7 +28,7 @@
                     cardview:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="2dp"
                     android:textAlignment="textStart" android:textSize="18sp"
                     android:textColor="@android:color/holo_red_light" android:layout_marginEnd="2dp"
-                    android:layout_marginStart="2dp"/>
+                    android:layout_marginStart="16dp"/>
             <ImageView
                     android:id="@+id/imageView_menuItemFoodImage"
                     android:layout_width="98dp"
@@ -46,7 +46,7 @@
                     cardview:layout_constraintStart_toEndOf="@+id/imageView_menuItemFoodImage"
                     android:layout_marginBottom="8dp"
                     cardview:layout_constraintVertical_bias="0.0"
-                    android:textSize="24sp" android:layout_marginTop="2dp" android:layout_marginStart="2dp"
+                    android:textSize="24sp" android:layout_marginTop="2dp" android:layout_marginStart="8dp"
                     android:layout_marginEnd="2dp" android:textAlignment="viewStart"
                     cardview:layout_constraintBottom_toTopOf="@+id/textView_menuItemsFoodPrice"/>
 
