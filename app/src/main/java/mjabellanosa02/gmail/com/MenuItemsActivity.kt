@@ -1,6 +1,7 @@
 package mjabellanosa02.gmail.com
 
 import android.app.PendingIntent.getActivity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.SearchView
@@ -60,6 +61,13 @@ class MenuItemsActivity : AppCompatActivity() {
                     PopUpDialogs(this).infoDialog("Empty", "No items to show")
                 }
             }
+
+        adapter.setOnItemClickListener { item, view ->
+            val menuItem = item as MenuItemViewHolder
+            var intent = Intent(menuItem.context, MenuItemDetailsActivity::class.java)
+            intent.putExtra("itemUid", menuItem.itemUid)
+            startActivity(intent)
+        }
 
 
         searchView_menuItemsActivitySearchBar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {

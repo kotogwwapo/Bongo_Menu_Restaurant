@@ -1,6 +1,7 @@
 package mjabellanosa02.gmail.com.Fragments
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,6 +15,7 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.fragment_favorite_menu.view.*
 import mjabellanosa02.gmail.com.GroupieViewHolders.FavoriteItemViewHolder
+import mjabellanosa02.gmail.com.MenuItemDetailsActivity
 
 import mjabellanosa02.gmail.com.R
 import mjabellanosa02.gmail.com.RecallableClasses.Custom_Progress_Dialog
@@ -77,6 +79,16 @@ class FavoriteMenuFragment : Fragment() {
                     PopUpDialogs(this.context!!).infoDialog("No Items", "You have no favorite food")
                 }
             }
+
+        adapter.setOnItemClickListener { item, view ->
+            val favoriteItem = item as FavoriteItemViewHolder
+            var intent = Intent(this.context!!, MenuItemDetailsActivity::class.java)
+            intent.putExtra("itemUid", favoriteItem.itemUid)
+
+            if (view.id != R.id.imageButton_favoriteItemRowDelete) {
+                startActivity(intent)
+            }
+        }
 
 
         return view
