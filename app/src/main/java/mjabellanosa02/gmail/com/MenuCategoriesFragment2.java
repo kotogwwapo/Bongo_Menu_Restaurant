@@ -1,5 +1,6 @@
 package mjabellanosa02.gmail.com;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -87,13 +88,18 @@ public class MenuCategoriesFragment2 extends Fragment {
             groupAdapter.setOnItemClickListener(new OnItemClickListener() {
                 @Override
                 public void onItemClick(@NonNull Item item, @NonNull View view) {
-//                    MenuCategoriesViewHolder menuCategoriesViewHolder = (MenuCategoriesViewHolder) item;
-//                    Intent intent = new Intent(menuCategoriesViewHolder.getContext(), )
-//                    menuCategoriesViewHolder.getContext();
+                    MenuCategoriesViewHolder menuCategoriesViewHolder = (MenuCategoriesViewHolder) item;
+                    Intent intent = new Intent(menuCategoriesViewHolder.getContext(), MenuItemsActivity.class);
 
-                    AppCompatActivity activity = (AppCompatActivity) view.getContext();
-                    Fragment myFragment = new ItemCategoriesFragment();
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.Framelayout_apptabs, myFragment).addToBackStack(null).commit();
+                    if (menuCategoriesViewHolder.getCategoryName().contains(" ")){
+                        String category = menuCategoriesViewHolder.getCategoryName().replace(" ", "_");
+                        intent.putExtra("menuCategoryUid", category);
+                    }else {
+                        intent.putExtra("menuCategoryUid", menuCategoriesViewHolder.getCategoryName());
+                        menuCategoriesViewHolder.getContext();
+                    }
+
+                    startActivity(intent);
                 }
             });
         }
