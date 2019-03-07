@@ -3,7 +3,7 @@ package mjabellanosa02.gmail.com
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class MenuItemDetails : AppCompatActivity() {
+class MenuItemDetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
