@@ -83,7 +83,7 @@ public class View_Items_Recycler_Adapter extends RecyclerView.Adapter<View_Items
 //            this.mContext=mContext;
             itemView.setOnClickListener(this);
             cardviewItem_itemName = itemView.findViewById(R.id.textView_menuCategoryRowCategoryName);
-            cardviewItem_imageItem = itemView.findViewById(R.id.imageView_menuCategoryRowImage);
+            cardviewItem_imageItem = itemView.findViewById(R.id.imageView_menuItemFoodImage);
         }
 
 
