@@ -32,7 +32,7 @@ public class View_ItemsCategories_Recycler_Adapter extends RecyclerView.Adapter<
     @NonNull
     @Override
     public View_ItemsCategories_Recycler_Adapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_categoriescontent, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_menu_items, parent, false);
         View_ItemsCategories_Recycler_Adapter.ViewHolder holder = new View_ItemsCategories_Recycler_Adapter.ViewHolder(view, mContext, items);
 
         return holder;
@@ -79,9 +79,9 @@ public class View_ItemsCategories_Recycler_Adapter extends RecyclerView.Adapter<
             this.items = items;
 //            this.mContext=mContext;
 //            itemView.setOnClickListener(this);
-            cardviewItem_itemName = itemView.findViewById(R.id.textView_foodname);
-            cardviewItem_itemPrice = itemView.findViewById(R.id.textView_foodPrice);
-            cardviewItem_imageItem = itemView.findViewById(R.id.imageView_menuCategoryRowImage);
+            cardviewItem_itemName = itemView.findViewById(R.id.textView_menuItemsFoodName);
+            cardviewItem_itemPrice = itemView.findViewById(R.id.textView_menuItemsFoodPrice);
+            cardviewItem_imageItem = itemView.findViewById(R.id.imageView_menuItemFoodImage);
         }
 
 //        @Override

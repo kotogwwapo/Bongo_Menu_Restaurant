@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   xmlns:cardview="http://schemas.android.com/apk/res-auto"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:id="@+id/parentLayout_Item"
+                                                   android:layout_margin="5dp"
+>
+
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" cardview:layout_constraintTop_toTopOf="parent"
+            cardview:layout_constraintEnd_toEndOf="parent" cardview:layout_constraintBottom_toBottomOf="parent"
+            cardview:layout_constraintStart_toStartOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" android:id="@+id/parentLayout_ItemLinear">
+
+            <TextView
+                    android:text="       TextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:id="@+id/textView_menuItemsFoodPrice"
+                    cardview:layout_constraintEnd_toEndOf="parent"
+                    cardview:layout_constraintStart_toEndOf="@+id/imageView_menuItemFoodImage"
+                    cardview:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="2dp"
+                    android:textAlignment="textStart" android:textSize="18sp"
+                    android:textColor="@android:color/holo_red_light" android:layout_marginEnd="2dp"
+                    android:layout_marginStart="2dp"/>
+            <ImageView
+                    android:id="@+id/imageView_menuItemFoodImage"
+                    android:layout_width="98dp"
+                    android:layout_height="89dp"
+                    android:scaleType="centerCrop"
+                    cardview:srcCompat="@mipmap/ic_launcher_round" cardview:layout_constraintStart_toStartOf="parent"
+                    cardview:layout_constraintTop_toTopOf="parent"
+                    cardview:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="2dp"
+                    android:layout_marginTop="2dp" android:layout_marginBottom="2dp"/>
+            <TextView
+                    android:text="       TextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" android:id="@+id/textView_menuItemsFoodName"
+                    cardview:layout_constraintEnd_toEndOf="parent" cardview:layout_constraintTop_toTopOf="parent"
+                    cardview:layout_constraintStart_toEndOf="@+id/imageView_menuItemFoodImage"
+                    android:layout_marginBottom="8dp"
+                    cardview:layout_constraintVertical_bias="0.0"
+                    android:textSize="24sp" android:layout_marginTop="2dp" android:layout_marginStart="2dp"
+                    android:layout_marginEnd="2dp" android:textAlignment="viewStart"
+                    cardview:layout_constraintBottom_toTopOf="@+id/textView_menuItemsFoodPrice"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

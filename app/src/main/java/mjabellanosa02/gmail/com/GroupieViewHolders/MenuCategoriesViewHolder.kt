@@ -7,13 +7,13 @@ import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.row_menu_category.view.*
 import mjabellanosa02.gmail.com.R
 
-class MenuCategoriesViewHolder(var categoryUrl: String, var categoryName: String, val context: Context): Item<ViewHolder>() {
+    class MenuCategoriesViewHolder(var categoryUrl: String, var categoryName: String, val context: Context): Item<ViewHolder>() {
     override fun getLayout(): Int {
         return R.layout.row_menu_category
     }
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
-        var categoryImageView = viewHolder.itemView.imageView_menuCategoryRowImage
+        var categoryImageView = viewHolder.itemView.imageView_menuCategoryFoodImage
         var categoryNameTextView = viewHolder.itemView.textView_menuCategoryRowCategoryName
 
         if (categoryUrl == ""){

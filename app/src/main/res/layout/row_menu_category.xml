@@ -19,7 +19,7 @@
                 android:layout_height="wrap_content">
 
             <ImageView
-                    android:id="@+id/imageView_menuCategoryRowImage"
+                    android:id="@+id/imageView_menuCategoryFoodImage"
                     android:layout_width="125dp"
                     android:layout_height="190dp"
                     android:scaleType="centerCrop"
