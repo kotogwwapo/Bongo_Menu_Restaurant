@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "430088013184",
+    "firebase_url": "https://bongomenurestaurant.firebaseio.com",
+    "project_id": "bongomenurestaurant",
+    "storage_bucket": "bongomenurestaurant.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430088013184:android:b70fab3f88559b86",
+        "android_client_info": {
+          "package_name": "mjabellanosa02.gmail.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430088013184-grof59gqnfesugkls5bh9tjm7gmj383g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mjabellanosa02.gmail.com",
+            "certificate_hash": "f7cecba016bb38e3034ff00ca4f6f860092b8daf"
+          }
+        },
+        {
+          "client_id": "430088013184-3e28je61o9lm92iogvnoq4i51vvlgl6r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR3YoAGOA8uAyl0WSF1rOeJB_HU07Jb6Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430088013184-3e28je61o9lm92iogvnoq4i51vvlgl6r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
