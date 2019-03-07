@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
+import android.widget.Toast
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
@@ -201,6 +202,43 @@ class MenuItemDetailsActivity : AppCompatActivity() {
 
             checkboxExtraSauce.setOnClickListener {
 
+            }
+
+            checkboxExtraSauce.setOnClickListener {
+                if(checkboxExtraSauce.isChecked){
+                    Toast.makeText(this, "saurce", Toast.LENGTH_LONG).show()
+                    additionalInfo!!.add(checkboxExtraSauce.text.toString().trim())
+                }else{
+                    try {
+                        additionalInfo!!.remove(checkboxExtraChicken.text.toString().trim())
+                    }catch (e:Exception){
+
+                    }
+                }
+            }
+
+            checkboxAddBeef.setOnClickListener {
+                if(checkboxAddBeef.isChecked){
+                    additionalInfo!!.add(checkboxAddBeef.text.toString().trim())
+                }else{
+                    try {
+                        additionalInfo!!.remove(checkboxAddBeef.text.toString().trim())
+                    }catch (e:Exception){
+
+                    }
+                }
+            }
+
+            checkboxExtraChicken.setOnClickListener {
+                if(checkboxExtraChicken.isChecked){
+                    additionalInfo!!.add(checkboxExtraChicken.text.toString().trim())
+                }else{
+                    try {
+                        additionalInfo!!.remove(checkboxExtraChicken.text.toString().trim())
+                    }catch (e:Exception){
+
+                    }
+                }
             }
 
             //add functionality to buttons
