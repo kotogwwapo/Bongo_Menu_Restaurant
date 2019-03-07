@@ -1,6 +1,5 @@
 package mjabellanosa02.gmail.com.Adapter;
 
-import android.app.FragmentManager;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 //import com.example.morkince.okasyonv2.activities.homepage_supplier_activities.SupplierEditItemDetailsActivity;
 //import com.example.morkince.okasyonv2.activities.model.ItemCategories;
@@ -20,10 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 //import com.google.firebase.storage.StorageReference;
 //import com.squareup.picasso.Picasso;
 import mjabellanosa02.gmail.com.ItemCategoriesFragment;
-import mjabellanosa02.gmail.com.MenucategoriesFragment;
 import mjabellanosa02.gmail.com.Model.ItemCategories;
 import mjabellanosa02.gmail.com.R;
-import mjabellanosa02.gmail.com.RestaurantHomePage;
 
 import java.util.ArrayList;
 
@@ -44,7 +40,7 @@ public class View_Items_Recycler_Adapter extends RecyclerView.Adapter<View_Items
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_menu_category, parent, false);
         ViewHolder holder = new ViewHolder(view,mContext, itemCategories);
         return holder;
     }
@@ -86,8 +82,8 @@ public class View_Items_Recycler_Adapter extends RecyclerView.Adapter<View_Items
             this.itemCategories = itemCategories;
 //            this.mContext=mContext;
             itemView.setOnClickListener(this);
-            cardviewItem_itemName = itemView.findViewById(R.id.cardviewItem_itemName);
-            cardviewItem_imageItem = itemView.findViewById(R.id.cardviewItem_imageItem);
+            cardviewItem_itemName = itemView.findViewById(R.id.textView_menuCategoryRowCategoryName);
+            cardviewItem_imageItem = itemView.findViewById(R.id.imageView_menuCategoryRowImage);
         }
 
 

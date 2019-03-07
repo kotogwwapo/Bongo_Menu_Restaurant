@@ -91,7 +91,7 @@ public class RestaurantHomePage extends AppCompatActivity
             }
 
             case R.id.nav_categories:{
-                Fragment newFragment = new MenucategoriesFragment();
+                Fragment newFragment = new MenuCategoriesFragment();
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = RestaurantHomePage.this.getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.Framelayout_apptabs, newFragment);

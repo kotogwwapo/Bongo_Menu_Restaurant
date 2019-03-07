@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-import mjabellanosa02.gmail.com.Model.ItemCategories;
 import mjabellanosa02.gmail.com.Model.Items;
 import mjabellanosa02.gmail.com.R;
 
@@ -82,7 +81,7 @@ public class View_ItemsCategories_Recycler_Adapter extends RecyclerView.Adapter<
 //            itemView.setOnClickListener(this);
             cardviewItem_itemName = itemView.findViewById(R.id.textView_foodname);
             cardviewItem_itemPrice = itemView.findViewById(R.id.textView_foodPrice);
-            cardviewItem_imageItem = itemView.findViewById(R.id.cardviewItem_imageItem);
+            cardviewItem_imageItem = itemView.findViewById(R.id.imageView_menuCategoryRowImage);
         }
 
 //        @Override
