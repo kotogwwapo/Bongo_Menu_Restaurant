@@ -14,6 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.google.firebase.auth.FirebaseAuth;
+import mjabellanosa02.gmail.com.Fragments.FavoriteMenuFragment;
 
 public class RestaurantHomePage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -24,7 +25,7 @@ public class RestaurantHomePage extends AppCompatActivity
         setContentView(R.layout.activity_restaurant_home_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        getSupportActionBar().setTitle("Restaurant Home");
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -80,6 +81,7 @@ public class RestaurantHomePage extends AppCompatActivity
 
         switch (id){
             case R.id.nav_home:{
+                getSupportActionBar().setTitle("Restaurant Home");
                 Fragment newFragment = new RestaurantHomePageFragment();
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = RestaurantHomePage.this.getSupportFragmentManager().beginTransaction();
@@ -91,6 +93,7 @@ public class RestaurantHomePage extends AppCompatActivity
             }
 
             case R.id.nav_categories:{
+                getSupportActionBar().setTitle("Menu Categories");
                 Fragment newFragment = new MenuCategoriesFragment2();
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = RestaurantHomePage.this.getSupportFragmentManager().beginTransaction();
@@ -105,6 +108,13 @@ public class RestaurantHomePage extends AppCompatActivity
             }
 
             case R.id.nav_favorite:{
+                getSupportActionBar().setTitle("Favorite Menu");
+                Fragment newFragment = new FavoriteMenuFragment();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = RestaurantHomePage.this.getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.Framelayout_apptabs, newFragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
                 break;
             }
 

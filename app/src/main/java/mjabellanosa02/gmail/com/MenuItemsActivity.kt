@@ -23,6 +23,8 @@ class MenuItemsActivity : AppCompatActivity() {
 
         var categoryUid = intent.getStringExtra("menuCategoryUid")
 
+        title = if (categoryUid.contains("_")) categoryUid.replace("_", " ") else categoryUid
+        
         var dialog = Custom_Progress_Dialog(this)
         dialog.showDialog("Loading", RandomMessages().getRandomMessage())
 
