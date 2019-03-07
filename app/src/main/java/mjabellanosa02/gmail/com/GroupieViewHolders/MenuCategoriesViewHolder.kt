@@ -16,8 +16,8 @@ class MenuCategoriesViewHolder(var categoryUrl: String, var categoryName: String
         var categoryImageView = viewHolder.itemView.imageView_menuCategoryRowImage
         var categoryNameTextView = viewHolder.itemView.textView_menuCategoryRowCategoryName
 
-        if (categoryUrl.isNullOrEmpty()){
-            Picasso.get().load(R.drawable.ic_error_green_24dp).into(categoryImageView)
+        if (categoryUrl == ""){
+            Picasso.get().load(R.drawable.food).into(categoryImageView)
         }else {
             Picasso.get().load(categoryUrl).into(categoryImageView)
         }
