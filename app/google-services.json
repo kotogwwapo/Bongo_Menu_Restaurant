@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "430088013184",
-    "firebase_url": "https://bongomenurestaurant.firebaseio.com",
-    "project_id": "bongomenurestaurant",
-    "storage_bucket": "bongomenurestaurant.appspot.com"
+    "project_number": "153259185508",
+    "firebase_url": "https://bongomenurestaurant-d76e7.firebaseio.com",
+    "project_id": "bongomenurestaurant-d76e7",
+    "storage_bucket": "bongomenurestaurant-d76e7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:430088013184:android:b70fab3f88559b86",
+        "mobilesdk_app_id": "1:153259185508:android:b70fab3f88559b86",
         "android_client_info": {
           "package_name": "mjabellanosa02.gmail.com"
         }
       },
       "oauth_client": [
         {
-          "client_id": "430088013184-grof59gqnfesugkls5bh9tjm7gmj383g.apps.googleusercontent.com",
+          "client_id": "153259185508-ju1n2ne1o9v4p8laft1lmkapad0qtd74.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "mjabellanosa02.gmail.com",
-            "certificate_hash": "f7cecba016bb38e3034ff00ca4f6f860092b8daf"
+            "certificate_hash": "b317e5e051512bc6760817b99eba8039ef3c0bde"
           }
         },
         {
-          "client_id": "430088013184-3e28je61o9lm92iogvnoq4i51vvlgl6r.apps.googleusercontent.com",
+          "client_id": "153259185508-lqs9k3rnhunivvdirgua4i7gm70i4sia.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDR3YoAGOA8uAyl0WSF1rOeJB_HU07Jb6Y"
+          "current_key": "AIzaSyCSS05hV7ftcqQfsGTmmsGSrlnIpsmJjP8"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "430088013184-3e28je61o9lm92iogvnoq4i51vvlgl6r.apps.googleusercontent.com",
+              "client_id": "153259185508-lqs9k3rnhunivvdirgua4i7gm70i4sia.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
