@@ -1,6 +1,9 @@
 package mjabellanosa02.gmail.com.Model
 
-class Cart {
+import android.os.Parcel
+import android.os.Parcelable
+
+class Cart() :Parcelable {
     var cart_item_name: String ?= null
     var cart_item_uid: String ?= null
     var cart_uid: String ?= null
@@ -9,39 +12,35 @@ class Cart {
     var cart_item_additional_info: ArrayList<String> ?= null
     var cart_item_count: Int ?= null
 
-    constructor()
-
-    constructor(
-        cart_item_name: String?,
-        cart_item_uid: String?,
-        cart_uid: String?,
-        cart_item_price: Double?,
-        cart_item_image_url: String?,
-        cart_item_additional_info: ArrayList<String>?,
-        cart_item_count: Int?
-    ) {
-        this.cart_item_name = cart_item_name
-        this.cart_item_uid = cart_item_uid
-        this.cart_uid = cart_uid
-        this.cart_item_price = cart_item_price
-        this.cart_item_image_url = cart_item_image_url
-        this.cart_item_additional_info = cart_item_additional_info
-        this.cart_item_count = cart_item_count
+    constructor(parcel: Parcel) : this() {
+        cart_item_name = parcel.readString()
+        cart_item_uid = parcel.readString()
+        cart_uid = parcel.readString()
+        cart_item_price = parcel.readValue(Double::class.java.classLoader) as? Double
+        cart_item_image_url = parcel.readString()
+        cart_item_count = parcel.readValue(Int::class.java.classLoader) as? Int
     }
 
-    constructor(
-        cart_item_name: String?,
-        cart_item_uid: String?,
-        cart_item_price: Double?,
-        cart_item_image_url: String?,
-        cart_item_additional_info: ArrayList<String>?,
-        cart_item_count: Int?
-    ) {
-        this.cart_item_name = cart_item_name
-        this.cart_item_uid = cart_item_uid
-        this.cart_item_price = cart_item_price
-        this.cart_item_image_url = cart_item_image_url
-        this.cart_item_additional_info = cart_item_additional_info
-        this.cart_item_count = cart_item_count
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(cart_item_name)
+        parcel.writeString(cart_item_uid)
+        parcel.writeString(cart_uid)
+        parcel.writeValue(cart_item_price)
+        parcel.writeString(cart_item_image_url)
+        parcel.writeValue(cart_item_count)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<Cart> {
+        override fun createFromParcel(parcel: Parcel): Cart {
+            return Cart(parcel)
+        }
+
+        override fun newArray(size: Int): Array<Cart?> {
+            return arrayOfNulls(size)
+        }
     }
 }
