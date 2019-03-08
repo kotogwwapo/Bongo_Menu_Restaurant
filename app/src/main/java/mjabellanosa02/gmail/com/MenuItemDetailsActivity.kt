@@ -261,7 +261,14 @@ class MenuItemDetailsActivity : AppCompatActivity() {
             additionalInfo.add(notes)
             dialog.showDialog("Loading", RandomMessages().getRandomMessage())
 
-            var cart = Cart(itemName, itemUid, price, imageUrl, additionalInfo, 1)
+            var cart = Cart()
+            cart.cart_item_name = itemName
+            cart.cart_item_uid = itemUid
+            cart.cart_item_price = price
+            cart.cart_item_image_url = imageUrl
+            cart.cart_item_additional_info = additionalInfo
+            cart.cart_item_count = 1
+
             FirebaseFirestore.getInstance()
                 .collection("Cart")
                 .document(currentUser.uid)

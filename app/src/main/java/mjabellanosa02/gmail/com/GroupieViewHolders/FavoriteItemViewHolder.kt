@@ -46,9 +46,9 @@ class FavoriteItemViewHolder(var itemUid:String, var itemUrl: String, var itemNa
                 dialog1.showDialog("Loading", "Deleting Stuff")
 
                 FirebaseFirestore.getInstance()
-                    .collection("Favorite_Items")
+                    .collection("Favorite_Food")
                     .document(currentUser.uid)
-                    .collection("favorite_Items")
+                    .collection("favorite_food")
                     .document(itemUid)
                     .delete()
                     .addOnCompleteListener {

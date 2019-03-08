@@ -9,9 +9,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".TrendingHotDealsActivity">
+        <activity android:name=".CheckoutActivity">
         </activity>
-
         <activity android:name=".YourCartActivity">
         </activity>
         <activity android:name=".MenuItemDetailsActivity">
