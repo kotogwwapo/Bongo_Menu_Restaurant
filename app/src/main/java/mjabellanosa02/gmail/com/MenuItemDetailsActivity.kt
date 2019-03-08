@@ -9,13 +9,16 @@ import android.view.Window
 import android.widget.Toast
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_menu_item_details.*
 import kotlinx.android.synthetic.main.modal_add_menu_item_option.view.*
+import mjabellanosa02.gmail.com.Model.Cart
 import mjabellanosa02.gmail.com.Model.FavoriteItem
 import mjabellanosa02.gmail.com.RecallableClasses.Custom_Progress_Dialog
+import mjabellanosa02.gmail.com.RecallableClasses.PopUpDialogs
 import mjabellanosa02.gmail.com.RecallableClasses.RandomMessages
 import java.lang.Exception
 
@@ -34,6 +37,7 @@ class MenuItemDetailsActivity : AppCompatActivity() {
         var categoryUid = intent.getStringExtra("categoryUid")
         val currentUser = FirebaseAuth.getInstance().currentUser!!
         var additionalInfo = ArrayList<String>()
+        var notes = ""
 
         var dialog = Custom_Progress_Dialog(this)
         dialog.showDialog("Loading", RandomMessages().getRandomMessage())
@@ -200,9 +204,8 @@ class MenuItemDetailsActivity : AppCompatActivity() {
                 editTextNotes.setText(additionalInfo!!.get(additionalInfo!!.indexOf(editTextNotes.text.toString().trim())))
             }
 
-            checkboxExtraSauce.setOnClickListener {
 
-            }
+            editTextNotes.setText(notes)
 
             checkboxExtraSauce.setOnClickListener {
                 if(checkboxExtraSauce.isChecked){
@@ -241,53 +244,39 @@ class MenuItemDetailsActivity : AppCompatActivity() {
                 }
             }
 
-            //add functionality to buttons
-            if(checkboxExtraSauce.isChecked){
-                additionalInfo!!.add(checkboxExtraSauce.text.toString().trim())
-            }else{
-                try {
-                    additionalInfo!!.remove(checkboxExtraChicken.text.toString().trim())
-                }catch (e:Exception){
-
-                }
-            }
-
-            if(checkboxExtraChicken.isChecked){
-                additionalInfo!!.add(checkboxExtraChicken.text.toString().trim())
-            }else{
-                try {
-                    additionalInfo!!.remove(checkboxExtraChicken.text.toString().trim())
-                }catch (e:Exception){
-
-                }
-            }
-
-            if(checkboxAddBeef.isChecked){
-                additionalInfo!!.add(checkboxAddBeef.text.toString().trim())
-            }else{
-                try {
-                    additionalInfo!!.remove(checkboxAddBeef.text.toString().trim())
-                }catch (e:Exception){
-
-                }
-            }
-
             buttonOK.setOnClickListener {
-                try {
-                    additionalInfo!!.remove(editTextNotes.text.toString().trim())
-                    additionalInfo!!.add(editTextNotes.text.toString().trim())
-                }catch (e:Exception){
-                    additionalInfo!!.add(editTextNotes.text.toString().trim())
-                }
-
+                notes = editTextNotes.text.toString().trim()
                 dialog.dismiss()
             }
 
             buttonCancel.setOnClickListener{
                 additionalInfo!!.clear()
+                notes = ""
                 dialog.dismiss()
             }
 
+        }
+
+        button_menuItemDetailsAddToCart.setOnClickListener {
+            additionalInfo.add(notes)
+            dialog.showDialog("Loading", RandomMessages().getRandomMessage())
+
+            var cart = Cart(itemName, itemUid, price, imageUrl, additionalInfo, 1)
+            FirebaseFirestore.getInstance()
+                .collection("Cart")
+                .document(currentUser.uid)
+                .collection("cart")
+                .add(cart)
+                .addOnCompleteListener {
+                    task: Task<DocumentReference> ->
+                    if (task.isSuccessful){
+                        dialog.dissmissDialog()
+                        PopUpDialogs(this).successDialog("Success", "Item is now in your cart")
+                    }else{
+                        dialog.dissmissDialog()
+                        PopUpDialogs(this).errorDialog("Error", "Something went wrong")
+                    }
+                }
         }
     }
 }
