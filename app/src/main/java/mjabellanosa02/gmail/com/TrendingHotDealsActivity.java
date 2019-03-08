@@ -40,7 +40,7 @@ public class TrendingHotDealsActivity extends AppCompatActivity implements ViewP
         mViewPager.setAdapter(mAdapter);
         mViewPager.setCurrentItem(0);
         mViewPager.setOnPageChangeListener(this);
-
+//        mAdapter = new CustomPagerAdapter(this, mResources);
         setPageViewIndicator();
         FirebaseFirestore db;
         FirebaseUser currentuser= FirebaseAuth.getInstance().getCurrentUser();
