@@ -40,13 +40,17 @@ public class TrendingHotDealsActivity extends AppCompatActivity implements ViewP
         mViewPager.setAdapter(mAdapter);
         mViewPager.setCurrentItem(0);
         mViewPager.setOnPageChangeListener(this);
+
 //        mAdapter = new CustomPagerAdapter(this, mResources);
         setPageViewIndicator();
+
         FirebaseFirestore db;
         FirebaseUser currentuser= FirebaseAuth.getInstance().getCurrentUser();
-        db = FirebaseFirestore.getInstance();
-        db.collection("Hot_Deals").document(currentuser.getUid())
-      .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+
+        FirebaseFirestore.getInstance()
+                .collection("Hot_Deals")
+                .document(currentuser.getUid())
+                .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
@@ -65,6 +69,7 @@ public class TrendingHotDealsActivity extends AppCompatActivity implements ViewP
 //        mAdapter = new CustomPagerAdapter(this, mResources);
 
     }
+
     private void setPageViewIndicator() {
 
         Log.d("###setPageViewIndicator", " : called");
