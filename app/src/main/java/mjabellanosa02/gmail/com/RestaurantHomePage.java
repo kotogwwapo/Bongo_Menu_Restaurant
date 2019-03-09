@@ -120,6 +120,8 @@ public class RestaurantHomePage extends AppCompatActivity
             }
 
             case R.id.nav_hotdeals:{
+                Intent homeIntent = new Intent (RestaurantHomePage.this, TrendingHotDealsActivity.class);
+                startActivity(homeIntent);
                 break;
             }
 
