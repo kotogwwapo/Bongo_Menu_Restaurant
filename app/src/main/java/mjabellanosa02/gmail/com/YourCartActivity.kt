@@ -108,5 +108,10 @@ class YourCartActivity : AppCompatActivity() {
             startActivity(Intent(this, RestaurantHomePage::class.java))
             finish()
         }
+
+        button_yourCartCheckout.setOnClickListener {
+            startActivity(Intent(this, CheckoutActivity::class.java))
+            finish()
+        }
     }
 }

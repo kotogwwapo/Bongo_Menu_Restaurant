@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:orientation="vertical"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content">
+    <TextView
+            android:text="TextView"
+            android:padding="5dp"
+            android:maxLength="6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" android:id="@+id/textView_itemCountSummary"
+            android:layout_weight="1"
+            app:layout_constraintTop_toTopOf="@+id/textView_itemPriceSummaryRowItemCategory"
+            android:textSize="12sp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_itemPriceSummaryRowItemCategory"
+            app:layout_constraintVertical_bias="0.012"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toStartOf="@+id/textView_itemtotalPriceSummaryRow"/>
+    <TextView
+            android:text="TextView"
+            android:padding="5dp"
+            android:maxLength="6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" android:id="@+id/textView_itemtotalPriceSummaryRow"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@+id/textView_itemCountSummary"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_itemCountSummary"/>
+    <TextView
+            android:text="Item Category "
+            android:maxWidth="150dp"
+            android:padding="5dp"
+            android:layout_width="0dp"
+            android:layout_height="27dp" android:id="@+id/textView_itemPriceSummaryRowItemCategory"
+            android:layout_weight="1"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/textView_itemCountSummary"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
